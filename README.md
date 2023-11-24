@@ -1,3 +1,9 @@
+<!-- add a logo icon here -->
+<h1 align="center">
+    <br>
+    <img src="assets/logo.png" >
+</h1>
+
 # Full-Stack-AI-Researcher
 
 Welcome to "Full Stack AI Researcher", a comprehensive guide designed for the modern era of artificial intelligence research and application. This book is more than just a technical manual; it's a roadmap for aspiring and established AI professionals who seek to excel in this rapidly evolving field.
