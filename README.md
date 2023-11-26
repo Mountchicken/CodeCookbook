@@ -1,7 +1,7 @@
 <!-- add a logo icon here -->
 <h1 align="center">
     <br>
-    <img src="assets/logo.png" >
+    <img src="assets/logo.png" height=200 >
 </h1>
 
 # Full-Stack-AI-Researcher
