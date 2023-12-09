@@ -16,14 +16,15 @@ In this chapter, we'll explore some of the best practices for writing good code.
 - [Chapter 1: Basic Code](#chapter-1-basic-code)
     - [Contents](#contents)
   - [1. Readability - The Art of Writing Clear Code](#1-readability---the-art-of-writing-clear-code)
-    - [Docstring - The Story Behind the Code](#docstring---the-story-behind-the-code)
-    - [Type Hinting - Enhancing Code Clarity and Reliability](#type-hinting---enhancing-code-clarity-and-reliability)
+    - [Docstring](#docstring)
+    - [Type Hinting](#type-hinting)
+    - [Naming Conventions](#naming-conventions)
 
 
 ## 1. Readability - The Art of Writing Clear Code
 Readability in code is akin to clear handwriting in a letter. It's not just about what you write, but how you present it. A well-written piece of code should speak to its reader, guiding them through its logic as effortlessly as a well-told story. Let's delve into some of the key practices that make code readable.
 
-### Docstring - The Story Behind the Code
+### Docstring
 A docstring, short for "documentation string," is a string literal that occurs as the first statement in a module, function, class, or method definition. Here are three most important definitions from the official Python documentation, [PEP257](https://peps.python.org/pep-0257/).
 
 <details open>
@@ -219,7 +220,7 @@ class SimpleConvNet(nn.Module):
 
 </details>
 
-### Type Hinting - Enhancing Code Clarity and Reliability
+### Type Hinting
 Type hinting is like attaching labels to your produce in the grocery store; you know exactly what you're getting. It enhance readability, facilitate debugging, and enable better tooling. Type hinting in Python is a formal solution to statically indicate the type of a variable. It was introduced in Python 3.5 and is supported by most IDEs and code editors. Let's look at an example:
 
 ```python
@@ -346,3 +347,30 @@ def train_network(network: nn.Module, data: List[Tuple[torch.Tensor, torch.Tenso
 </details>
 
 Type hints in Python enhance code clarity, readability, and maintainability. Though Python remains dynamically typed, type hints offer the benefits of static typing, making them particularly useful in large codebases and complex applications like deep learning. Incorporating type hints is a straightforward way to make Python code more robust and easier to understand.
+
+
+### Naming Conventions 
+
+In programming, naming conventions are as crucial as the code itself. They are the first layer of documentation for anyone who reads your code.
+Good naming conventions in Python enhance readability, maintainability, and are essential for understanding the intent of the code. Let's look at some of the best practices for naming things in Python.
+
+- **General Python Naming Guidelines**:
+  - Descriptive Names: Choose names that reflect the purpose of the variable, function, or class.
+  - Short but Meaningful: While names should be descriptive, they should also be concise.
+  - Avoid Ambiguity: Names should be clear enough to not be confused with language keywords or commonly used variables.
+- **Conventions in Python**:
+  - Variable Names: Use lowercase letters and underscores to separate words.
+    - Example: `num_epochs`, `learning_rate`, `train_data`, `learning_rate`
+  - Function Names: Also use lowercase letters and underscores to separate words.
+    - Example: `train_network`, `find_max`, `get_data`, `calculate_loss`, `update_weights`
+  - Classes: Use CamelCase (capitalize the first letter of each word) for class names.
+    - Example: `SimpleNet`, `ConvNet`, `ResidualBlock`, `DataLoader`, `Optimizer`
+  - Constants: Use all uppercase letters and underscores to separate words.
+    - Example: `NUM_EPOCHS`, `LEARNING_RATE`, `TRAIN_DATA`, `VALIDATION_DATA`
+  - Private Variables: Use a leading underscore to indicate that a variable is private.
+    - Example: `_weights`, `_optimizer`, `_loss`, `_init_params`
+- **Abbreviations**:
+  - Variables and Functions: Lowercase with underscores. Examples: `img` for image, `calc_rmse`` for calculating root mean square error.
+  - Classes: CamelCase for well-known abbreviations. Examples: `RNN` for Recurrent Neural Network, `GAN`for Generative Adversarial Network.
+  - Constants: All uppercase for constants. Examples: `MAX_ITER` for maximum iterations, `DEFAULT_LR` for default learning rate.
+  - Clarity: Use abbreviations that are clear and well-understood in the context; explain any that might be ambiguous.
