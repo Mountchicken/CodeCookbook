@@ -16,13 +16,14 @@ In this chapter, we'll explore some of the best practices for writing good code.
 - [Chapter 1: Basic Code](#chapter-1-basic-code)
     - [Contents](#contents)
   - [1. Readability - The Art of Writing Clear Code](#1-readability---the-art-of-writing-clear-code)
-    - [1.1. Docstring and Type Hinting: The Story Behind the Code](#11-docstring-and-type-hinting-the-story-behind-the-code)
+    - [Docstring - The Story Behind the Code](#docstring---the-story-behind-the-code)
+    - [Type Hinting - Enhancing Code Clarity and Reliability](#type-hinting---enhancing-code-clarity-and-reliability)
 
 
 ## 1. Readability - The Art of Writing Clear Code
 Readability in code is akin to clear handwriting in a letter. It's not just about what you write, but how you present it. A well-written piece of code should speak to its reader, guiding them through its logic as effortlessly as a well-told story. Let's delve into some of the key practices that make code readable.
 
-### 1.1. Docstring and Type Hinting: The Story Behind the Code
+### Docstring - The Story Behind the Code
 A docstring, short for "documentation string," is a string literal that occurs as the first statement in a module, function, class, or method definition. Here are three most important definitions from the official Python documentation, [PEP257](https://peps.python.org/pep-0257/).
 
 <details open>
@@ -217,3 +218,131 @@ class SimpleConvNet(nn.Module):
 ```
 
 </details>
+
+### Type Hinting - Enhancing Code Clarity and Reliability
+Type hinting is like attaching labels to your produce in the grocery store; you know exactly what you're getting. It enhance readability, facilitate debugging, and enable better tooling. Type hinting in Python is a formal solution to statically indicate the type of a variable. It was introduced in Python 3.5 and is supported by most IDEs and code editors. Let's look at an example:
+
+```python
+def add_numbers(a: int, b: int) -> int:
+    return a + b
+```
+
+Anyone reading this function signature can quickly understand that the function expects two integers as inputs and will return an integer, and that's the beauty of type hinting. It makes code more readable and self-documenting. **It’s crucial to understand that type hints in Python do not change the dynamic nature of the language. They are simply hints and do not prevent runtime type errors.**
+
+Almost all built-in types are supported for type hinting. Let's start with some python in-built types.
+```python
+int: Integer number.
+param: int = 5
+
+float: Floating point number.
+param: float = 3.14
+
+bool: Boolean value (True or False).
+param: bool = True
+
+str: String.
+param: str = "researcher"
+```
+
+We can also use type hinting for more complex types by importing them from the typing module.
+```python
+# Generic Types: List, Tuple, Dict, Set
+from typing import List, Tuple, Dict, Set
+
+param: List[int] = [1, 2, 3]
+param: Dict[str, int] = {"Time": 12, "Money": 13}
+param: Set[int] = {1, 2, 3}
+param: Tuple[float, float] = (1.0, 2.0)
+
+# Specialized Types: Any, Union, Optional
+# - Optional: For optional values.
+# - Union: To indicate that a value can be of multiple types.
+# - Any: For values of any type.
+from typing import Union, Optional, Any
+
+param: Optional[int] = None
+param: Union[int, str] = 5
+param: Any = "Hello"
+
+# Callable Types: For functions and methods.
+from typing import Callable
+
+param: Callable[[int], str] = lambda x: str(x)
+```
+
+These are the most common types you'll encounter in Python. For a complete list of supported types, check out the [official documentation](https://docs.python.org/3/library/typing.html).
+
+Now let's look at some examples of combining type hinting and docstring in action.
+
+<details close>
+<summary><strong>Type hinting Example</strong></summary>
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from typing import Tuple, List, Optional
+
+def find_max(numbers: List[int]) -> Optional[int]:
+    """Find the maximum number in a list. Returns None if the list is empty.
+
+    Inputs:
+        numbers (List[int]): A list of integers.
+
+    Returns:
+        Optional[int]: The maximum number in the list, or None if the list is empty.
+    """
+    return max(numbers) if numbers else None
+
+class SimpleNet(nn.Module):
+    """A simple neural network with one fully connected layer.
+
+    Args:
+        input_size (int): The size of the input features.
+        output_size (int): The size of the output features.
+    """
+
+    def __init__(self, input_size: int, output_size: int) -> None:
+        super(SimpleNet, self).__init__()
+        self.fc = nn.Linear(input_size, output_size)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """Perform a forward pass of the network.
+
+        Inputs:
+            x (torch.Tensor): The input tensor.
+
+        Returns:
+            torch.Tensor: The output tensor after passing through the network.
+        """
+        return self.fc(x)
+
+def train_network(network: nn.Module, data: List[Tuple[torch.Tensor, torch.Tensor]], 
+                  epochs: int, learning_rate: float) -> None:
+    """Train a neural network.
+
+    Inputs:
+        network (nn.Module): The neural network to train.
+        data (List[Tuple[torch.Tensor, torch.Tensor]]): Training data, a list of tuples with
+          input and target tensors.
+        epochs (int): The number of epochs to train for.
+        learning_rate (float): The learning rate for the optimizer.
+
+    Returns:
+        None
+    """
+    criterion = nn.MSELoss()
+    optimizer = optim.Adam(network.parameters(), lr=learning_rate)
+
+    for epoch in range(epochs):
+        for inputs, targets in data:
+            optimizer.zero_grad()
+            outputs = network(inputs)
+            loss = criterion(outputs, targets)
+            loss.backward()
+            optimizer.step()
+```
+
+</details>
+
+Type hints in Python enhance code clarity, readability, and maintainability. Though Python remains dynamically typed, type hints offer the benefits of static typing, making them particularly useful in large codebases and complex applications like deep learning. Incorporating type hints is a straightforward way to make Python code more robust and easier to understand.
