@@ -19,6 +19,7 @@ In this chapter, we'll explore some of the best practices for writing good code.
     - [Docstring](#docstring)
     - [Type Hinting](#type-hinting)
     - [Naming Conventions](#naming-conventions)
+    - [Formatting](#formatting)
 
 
 ## 1. Readability - The Art of Writing Clear Code
@@ -351,8 +352,7 @@ Type hints in Python enhance code clarity, readability, and maintainability. Tho
 
 ### Naming Conventions 
 
-In programming, naming conventions are as crucial as the code itself. They are the first layer of documentation for anyone who reads your code.
-Good naming conventions in Python enhance readability, maintainability, and are essential for understanding the intent of the code. Let's look at some of the best practices for naming things in Python.
+In programming, naming conventions are as crucial as the code itself. They are the first layer of documentation for anyone who reads your code. Good naming conventions in Python enhance readability, maintainability, and are essential for understanding the intent of the code. Let's look at some of the best practices for naming things in Python.
 
 - **General Python Naming Guidelines**:
   - Descriptive Names: Choose names that reflect the purpose of the variable, function, or class.
@@ -374,3 +374,20 @@ Good naming conventions in Python enhance readability, maintainability, and are 
   - Classes: CamelCase for well-known abbreviations. Examples: `RNN` for Recurrent Neural Network, `GAN`for Generative Adversarial Network.
   - Constants: All uppercase for constants. Examples: `MAX_ITER` for maximum iterations, `DEFAULT_LR` for default learning rate.
   - Clarity: Use abbreviations that are clear and well-understood in the context; explain any that might be ambiguous.
+
+### Formatting
+Code formatting is about more than just aesthetics; it's a crucial aspect of writing readable and maintainable code. In Python, adhering to a consistent formatting style helps developers understand and navigate the code more effectively. Before we dive into the details of code formatting, let's look at two code snippets and see which style you prefer.
+
+<div> <center> <img src="images/formatting.jpg" width="600"/> </div>
+
+The Python Enhancement Proposal 8 **(PEP8)** is the de facto code style guide for Python. It covers various aspects of code formatting like indentation, line length, whitespace usage, and more. The rules are complex and detailed, but here are two off-the-shelf tools that can help you format your code according to PEP8, **automatically**.
+- **[yapf](https://marketplace.visualstudio.com/items?itemName=eeyore.yapf)**: It's an open-source tool designed to automatically format Python code to conform to the PEP 8 style guide. It reformats your code in a way that it believes is the best formatting approach, not merely to adhere strictly to PEP 8. It is now available as a VS Code extension. Once installed and correctly configured, you can format your code automatically when saving the code.
+
+<div> <center> <img src="images/yapf.jpg" width="300"/> </div>
+
+- **[isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)**: isort is a Python utility/library to sort imports alphabetically and automatically separate them into sections and by type. 
+
+
+<div> <center> <img src="images/isort.jpg" width="300"/> </div>
+
+Once you have installed the two extensions, yapf and isort, you can automatically format your Python code and organize your import statements with minimal effort.
