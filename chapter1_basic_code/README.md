@@ -15,14 +15,16 @@ In this chapter, we'll explore some of the best practices for writing good code.
 ### Contents
 - [Chapter 1: Basic Code](#chapter-1-basic-code)
     - [Contents](#contents)
-  - [1. Readability - The Art of Writing Clear Code](#1-readability---the-art-of-writing-clear-code)
+  - [1. Readability](#1-readability)
     - [Docstring](#docstring)
     - [Type Hinting](#type-hinting)
     - [Naming Conventions](#naming-conventions)
     - [Formatting](#formatting)
+  - [2. Simplicity and Efficiency](#2-simplicity-and-efficiency)
+    - [KISS Principle](#kiss-principle)
 
 
-## 1. Readability - The Art of Writing Clear Code
+## 1. Readability
 Readability in code is akin to clear handwriting in a letter. It's not just about what you write, but how you present it. A well-written piece of code should speak to its reader, guiding them through its logic as effortlessly as a well-told story. Let's delve into some of the key practices that make code readable.
 
 ### Docstring
@@ -391,3 +393,92 @@ The Python Enhancement Proposal 8 **(PEP8)** is the de facto code style guide fo
 <div> <center> <img src="images/isort.jpg" width="300"/> </div>
 
 Once you have installed the two extensions, yapf and isort, you can automatically format your Python code and organize your import statements with minimal effort.
+
+
+## 2. Simplicity and Efficiency
+
+### KISS Principle
+Keep It Simple, Stupid (KISS) is a design principle that emphasizes the importance of simplicity in software development. The core idea is that systems work best if they are kept simple rather than made complex. Simplicity here means avoiding unnecessary complexity, which can lead to code that is more reliable, easier to understand, maintain, and extend. Here are some of the key aspects of the KISS principle that you can apply to your code:
+
+  - **Simple Function Definitions**: 
+    - Write functions that ***do one thing and do it well***. Each function should have a clear purpose and not be overloaded with multiple tasks. Here's an example of a function that violates the KISS principle:
+        ```python
+        >>>>>>>>>>>>>>>>>>>> Non-KISS <<<<<<<<<<<<<<<<<<<<<<
+        def forward(input, target, optimizer, criterion):
+            output = model(input)
+            loss = criterion(output, target)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            return loss.item()
+
+        >>>>>>>>>>>>>>>>>>>>>> KISS <<<<<<<<<<<<<<<<<<<<<<<<
+        def forward(input, target):
+            output = model(input)
+            return output
+
+        def train_step(loader, model, optimizer, criterion):
+            for input, target in loader:
+            output = model(input)
+            loss = criterion(output, target)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+        ```
+  - **Use Build-in Libraies and Functions**:
+    - Python, known for its comprehensive standard library, along with numerous third-party libraries, offers a wealth of pre-written modules and functions that can save time, reduce the likelihood of bugs, and improve efficiency. Here is an example of using a built-in function to calculate the Non Maximum Suppression (NMS) of bounding boxes:
+        ```python
+        >>>>>>>>>>>>>>>>>>>> Non-KISS <<<<<<<<<<<<<<<<<<<<<<
+        import torch
+        def nms(boxes, scores, threshold=0.5):
+            """
+            Apply non-maximum suppression to avoid detecting too many
+            overlapping bounding boxes for the same object.
+
+            Parameters:
+            boxes (Tensor): The locations of the bounding boxes.
+            scores (Tensor): The scores for each box.
+            threshold (float): The overlap threshold for suppressing boxes.
+
+            Returns:
+            List[int]: The indices of the boxes that were kept.
+            """
+            x1 = boxes[:, 0]
+            y1 = boxes[:, 1]
+            x2 = boxes[:, 2]
+            y2 = boxes[:, 3]
+
+            areas = (x2 - x1) * (y2 - y1)
+            _, order = scores.sort(0, descending=True)
+
+            keep = []
+            while order.numel() > 0:
+                i = order[0]
+                keep.append(i)
+
+                if order.numel() == 1:
+                    break
+
+                xx1 = torch.maximum(x1[i], x1[order[1:]])
+                yy1 = torch.maximum(y1[i], y1[order[1:]])
+                xx2 = torch.minimum(x2[i], x2[order[1:]])
+                yy2 = torch.minimum(y2[i], y2[order[1:]])
+
+                w = torch.maximum(torch.tensor(0.0), xx2 - xx1)
+                h = torch.maximum(torch.tensor(0.0), yy2 - yy1)
+                overlap = (w * h) / areas[order[1:]]
+
+                ids = (overlap <= threshold).nonzero().squeeze()
+                if ids.numel() == 0:
+                    break
+                order = order[ids + 1]
+            return keep
+        
+        >>>>>>>>>>>>>>>>>>>>>> KISS <<<<<<<<<<<<<<<<<<<<<<<<
+        import torch
+        import torchvision.ops as ops
+        # Apply NMS from torchvision
+        nms_indices = ops.nms(boxes, scores, threshold=0.5)
+        ```
+  - **Avoid Over-Engineering**:
+    - Over-engineering refers to the practice of making a project or a system more complicated than necessary, often adding extra features or complexity that do not add significant value. This can manifest as overly complex code, over-abstracted architectures, or unnecessary features that complicate maintenance and understanding without providing proportional benefits.
