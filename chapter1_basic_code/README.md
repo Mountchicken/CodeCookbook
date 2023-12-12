@@ -481,4 +481,38 @@ Keep It Simple, Stupid (KISS) is a design principle that emphasizes the importan
         nms_indices = ops.nms(boxes, scores, threshold=0.5)
         ```
   - **Avoid Over-Engineering**:
-    - Over-engineering refers to the practice of making a project or a system more complicated than necessary, often adding extra features or complexity that do not add significant value. This can manifest as overly complex code, over-abstracted architectures, or unnecessary features that complicate maintenance and understanding without providing proportional benefits.
+    - Over-engineering refers to the practice of making a project or a system more complicated than necessary, often adding extra features or complexity that do not add significant value. This can manifest as overly complex code, over-abstracted architectures, or unnecessary features that complicate maintenance and understanding without providing proportional benefits. Here is an example of over-engineering, say
+    we need a function to calculate then mean value of a list:
+        ```python
+        >>>>>>>>>>>>>>>>>>>> Non-KISS <<<<<<<<<<<<<<<<<<<<<<
+        class Number:
+            def __init__(self, value):
+                self.value = value
+
+        class NumberList:
+            def __init__(self, numbers):
+                self.numbers = [Number(num) for num in numbers]
+
+            def sum(self):
+                return sum(number.value for number in self.numbers)
+
+            def length(self):
+                return len(self.numbers)
+
+            def average(self):
+                return self.sum() / self.length() if self.length() > 0 else 0
+
+        # Usage
+        number_list = NumberList([10, 20, 30, 40, 50])
+        avg = number_list.average()
+        print("Average:", avg)
+
+        >>>>>>>>>>>>>>>>>>>>>> KISS <<<<<<<<<<<<<<<<<<<<<<<<
+        def average(numbers):
+            return sum(numbers) / len(numbers) if numbers else 0
+
+        # Usage
+        avg = average([10, 20, 30, 40, 50])
+        print("Average:", avg)
+        ```
+    
