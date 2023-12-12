@@ -22,6 +22,7 @@ In this chapter, we'll explore some of the best practices for writing good code.
     - [Formatting](#formatting)
   - [2. Simplicity and Efficiency](#2-simplicity-and-efficiency)
     - [KISS Principle](#kiss-principle)
+    - [Write Efficient Code](#write-efficient-code)
 
 
 ## 1. Readability
@@ -516,3 +517,57 @@ Keep It Simple, Stupid (KISS) is a design principle that emphasizes the importan
         print("Average:", avg)
         ```
     
+### Write Efficient Code
+Writing efficient code means optimizing both for speed and resource usage, ensuring that the application runs smoothly and responds quickly, even as the complexity of tasks or the size of data increases.
+
+- **Algorithmic Complexity:**
+  - The efficiency of code often comes down to its algorithmic complexity, commonly referred to as Big O notation. It's crucial to choose the right algorithm and data structure for a given task. For example, in a sorting task, using QuickSort (average complexity $O(nlogn)$) is generally more efficient than Bubble Sort (average complexity $O(n^2)$).
+- **Efficient Data Handling**:
+  - Efficient data handling is crucial, especially in data-heavy situations. For example, when working with large datasets, it's better to use generators instead of lists to avoid loading the entire dataset into memory. Similarly, when working with images, it's better to use a data loader that loads images on-demand rather than loading all images into memory at once. Here is an example of using `yield` to create a generator to load TSV (Tab-Separated Values) file:
+    ```python
+    >>>>>>>>>>>>>>>>>>>> Non-Efficient <<<<<<<<<<<<<<<<<<<<<<
+    def load_data_into_list(file_path):
+        data = []
+        with open(file_path, 'r') as file:
+            for line in file:
+                columns = line.strip().split('\t')
+                data.append(columns)
+        return data
+    # this will load all data into memory, which is not efficient
+    data = load_data_into_list('data.tsv')
+
+    >>>>>>>>>>>>>>>>>>>>>> Efficient <<<<<<<<<<<<<<<<<<<<<<<<
+    def load_data_generator(file_path):
+    with open(file_path, 'r') as file:
+        for line in file:
+            columns = line.strip().split('\t')
+            yield columns
+    # this will create a generator that loads data on-demand
+    data_generator = load_data_generator('data.tsv')
+    for data in data_generator:
+        # Process each line of data here
+    ```
+- **Vectorization and Parallelization**:
+  - Vectorization and parallelization are two techniques that can significantly improve the performance of code. Vectorization refers to performing operations on entire arrays rather than individual elements. For example, in NumPy, we can add two arrays of the same shape using the `+` operator, which will add the corresponding elements of the two arrays. This is much more efficient than using a `for` loop to add the elements one by one. Similarly, parallelization refers to performing operations in parallel, using multiple processors or CPU cores. Here is an example of vectorization and parallelization in action:
+    ```python
+    >>>>>>>>>>>>>>>>>>>> Non-Efficient <<<<<<<<<<<<<<<<<<<<<<
+    import numpy as np
+    def add_arrays(a, b):
+        result = []
+        for i in range(len(a)):
+            result.append(a[i] + b[i])
+        return result
+    a = np.random.rand(1000000)
+    b = np.random.rand(1000000)
+    # this will take a long time to execute
+    c = add_arrays(a, b)
+
+    >>>>>>>>>>>>>>>>>>>>>> Efficient <<<<<<<<<<<<<<<<<<<<<<<<
+    import numpy as np
+    def add_arrays(a, b):
+        return a + b
+    a = np.random.rand(1000000)
+    b = np.random.rand(1000000)
+    # this will execute much faster
+    c = add_arrays(a, b)
+    ```
