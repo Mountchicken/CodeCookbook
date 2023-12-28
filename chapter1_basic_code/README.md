@@ -1,5 +1,5 @@
 # Chapter 1: Basic Code
-In the world of coding, every keystroke is a decision, and like a well-tailored suit, good code never goes out of style. It's a blend of science and art, where elegance meets logic. But let’s face it, not all code is created equal. Some are like a Swiss Army knife - versatile and efficient, while others... well, they're more like a tangled ball of yarn. What separates the good from the bad? Here are five key aspects of good code:
+In the world of coding, every keystroke is a decision, and like a well-tailored suit, good code never goes out of style. It's a blend of science and art, where elegance meets logic. But let’s face it, not all code is created equal. Some are like a Swiss Army knife - versatile and efficient, while others... well, they're more like a tangled ball of yarn. What separates the good from the bad? Here are three key aspects of good code:
 - **Readability**:
   -  Good code should be easy to read and understand. This means using clear naming conventions, organizing code logically, and commenting where necessary to explain complex parts.
 - **Simplicity and Efficiency**:
@@ -7,8 +7,6 @@ In the world of coding, every keystroke is a decision, and like a well-tailored 
   -  Efficient code also performs its tasks quickly and resourcefully.
 - **Maintainability**:
   - Code should be easy to maintain and modify. This involves writing modular code, where different parts of the program are separated into distinct sections or functions that can be updated independently.
-- **Robustness and Reliability**: Good code should handle errors gracefully and be reliable under different conditions. This involves anticipating potential issues and coding defensively against them.
-- **Scalability**: The code should be able to handle growth, whether it's more data, more users, or more use cases, without significant changes to the underlying system.
 
 In this chapter, we'll explore some of the best practices for writing good code. We'll cover everything from naming conventions to code review, and we'll also discuss some of the tools that can help you write better code. Let's get started!
 
@@ -23,7 +21,9 @@ In this chapter, we'll explore some of the best practices for writing good code.
   - [2. Simplicity and Efficiency](#2-simplicity-and-efficiency)
     - [KISS Principle](#kiss-principle)
     - [Write Efficient Code](#write-efficient-code)
-
+  - [3. Maintainability](#3-maintainability)
+    - [Use Registry Mechanism to Manage Your Code](#use-registry-mechanism-to-manage-your-code)
+    - [Organize Your Code by Functionality](#organize-your-code-by-functionality)
 
 ## 1. Readability
 Readability in code is akin to clear handwriting in a letter. It's not just about what you write, but how you present it. A well-written piece of code should speak to its reader, guiding them through its logic as effortlessly as a well-told story. Let's delve into some of the key practices that make code readable.
@@ -571,3 +571,41 @@ Writing efficient code means optimizing both for speed and resource usage, ensur
     # this will execute much faster
     c = add_arrays(a, b)
     ```
+
+## 3. Maintainability
+Maintainability refers to how easily software can be maintained over time. This includes fixing bugs, improving functionality, and update to meet new requirements or work with new technologies. High maintainability is crucial for the long-term success and adaptability of a deep learning project.
+
+### Use Registry Mechanism to Manage Your Code
+Quoting from [MMEngine](https://mmengine.readthedocs.io/en/latest/advanced_tutorials/registry.html#registry), "The registry can be considered as a union of a mapping table and a build function of modules. The mapping table maintains a ***mapping from strings to classes or functions***, allowing the user to find the corresponding class or function with its name/notation. For example, the mapping from the string "ResNet" to the ResNet class. The module build function defines how to find the corresponding class or function based on a string and how to instantiate the class or call the function. "
+
+Now let's look at an example of how registry mechanism works
+```python
+@BACKBONES.register_module()
+class ClipViTWrapper(nn.Module):
+    def __init__(self, return_pool_feature: bool = True, freeze: bool = False):
+        super(ClipViTWrapper, self).__init__()
+        self.model = CLIPVisionModel.from_pretrained(
+            'openai/clip-vit-base-patch32')
+        self.return_pool_feature = return_pool_feature
+        if freeze:
+            for param in self.model.parameters():
+                param.requires_grad = False
+
+    def forward(self, x: torch.Tensor):
+        ...
+
+>>>>>>>>>>>>>>>>>>>> W/O Registry <<<<<<<<<<<<<<<<<<<<<<
+from ...backbones import ClipViTWrapper
+model = ClipViTWrapper(return_pool_feature=True, freeze=False)
+
+>>>>>>>>>>>>>>>>>>>>>> W/ Registry <<<<<<<<<<<<<<<<<<<<<<<<
+model = BACKBONES.build(dict(type='ClipViTWrapper', return_pool_feature=True, freeze=False))
+```
+
+- **Decoupling Code and Configuration**: The registry pattern allows for the creation and configuration of objects like `ClipViTWrapper` in a more dynamic and decoupled manner. Instead of directly importing and instantiating the class, you use a registry (`BACKBONES`) to build the object. This separation of object creation from usage enhances flexibility and maintainability.
+
+- **Enhanced Flexibility**: With the registry, you can easily switch between different backbone models (like `ClipViTWrapper`) by changing a configuration file or a dictionary. 
+
+- **Scalability**: As the project grows, the registry pattern scales well, accommodating more components without increasing 
+
+### Organize Your Code by Functionality
