@@ -1,6 +1,6 @@
 
 
-# Cookbook to Craft Good Code
+# Cookbook for Crafting Good Code
 Think of good code like a classic, well-fitting piece of clothing—it never goes out of style. Coding is both a science and an art, where neatness and logic come together. What makes some code stand out as great? Here are three key aspects:
 - **Readability**:
   -  Good code should be easy to read and understand. This means using clear naming conventions, organizing code logically, and commenting where necessary to explain complex parts.
@@ -13,7 +13,7 @@ Think of good code like a classic, well-fitting piece of clothing—it never goe
 In this guide, we'll dive into the essentials of crafting great code. We'll go through everything from how to name things clearly and highlight tools that make coding better and easier. 
 
 ### Contents
-- [Cookbook to Craft Good Code](#cookbook-to-craft-good-code)
+- [Cookbook for Crafting Good Code](#cookbook-for-crafting-good-code)
     - [Contents](#contents)
   - [1. Readability](#1-readability)
     - [Docstring](#docstring)
