@@ -1,0 +1,698 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/jiangqing/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.13/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="chapter-1-basic-code">Chapter 1: Basic Code </h1>
+<p>In the world of coding, every keystroke is a decision, and like a well-tailored suit, good code never goes out of style. It's a blend of science and art, where elegance meets logic. But let’s face it, not all code is created equal. Some are like a Swiss Army knife - versatile and efficient, while others... well, they're more like a tangled ball of yarn. What separates the good from the bad? Here are three key aspects of good code:</p>
+<ul>
+<li><strong>Readability</strong>:
+<ul>
+<li>Good code should be easy to read and understand. This means using clear naming conventions, organizing code logically, and commenting where necessary to explain complex parts.</li>
+</ul>
+</li>
+<li><strong>Simplicity and Efficiency</strong>:
+<ul>
+<li>Good code often follows the KISS principle ("Keep It Simple, Stupid"). It should accomplish its tasks in the simplest way possible, without unnecessary complexity.</li>
+<li>Efficient code also performs its tasks quickly and resourcefully.</li>
+</ul>
+</li>
+<li><strong>Maintainability</strong>:
+<ul>
+<li>Code should be easy to maintain and modify. This involves writing modular code, where different parts of the program are separated into distinct sections or functions that can be updated independently.</li>
+</ul>
+</li>
+</ul>
+<p>In this chapter, we'll explore some of the best practices for writing good code. We'll cover everything from naming conventions to code review, and we'll also discuss some of the tools that can help you write better code. Let's get started!</p>
+<h3 id="contents">Contents </h3>
+<ul>
+<li><a href="#chapter-1-basic-code">Chapter 1: Basic Code</a>
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#1-readability">1. Readability</a>
+<ul>
+<li><a href="#docstring">Docstring</a></li>
+<li><a href="#type-hinting">Type Hinting</a></li>
+<li><a href="#naming-conventions">Naming Conventions</a></li>
+<li><a href="#formatting">Formatting</a></li>
+</ul>
+</li>
+<li><a href="#2-simplicity-and-efficiency">2. Simplicity and Efficiency</a>
+<ul>
+<li><a href="#kiss-principle">KISS Principle</a></li>
+<li><a href="#write-efficient-code">Write Efficient Code</a></li>
+</ul>
+</li>
+<li><a href="#3-maintainability">3. Maintainability</a>
+<ul>
+<li><a href="#use-registry-mechanism-to-manage-your-code">Use Registry Mechanism to Manage Your Code</a></li>
+<li><a href="#organize-your-code-by-functionality">Organize Your Code by Functionality</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-readability">1. Readability </h2>
+<p>Readability in code is akin to clear handwriting in a letter. It's not just about what you write, but how you present it. A well-written piece of code should speak to its reader, guiding them through its logic as effortlessly as a well-told story. Let's delve into some of the key practices that make code readable.</p>
+<h3 id="docstring">Docstring </h3>
+<p>A docstring, short for "documentation string," is a string literal that occurs as the first statement in a module, function, class, or method definition. Here are three most important definitions from the official Python documentation, <a href="https://peps.python.org/pep-0257/">PEP257</a>.</p>
+<details open="">
+<summary><strong>Python PEP257</strong></summary>
+<ul>
+<li>
+<p><strong>1. What Should be Documented</strong>:</p>
+<ul>
+<li>PEP 257 suggests that <em><strong>all public modules, functions, classes, and methods should have docstrings</strong></em>. Private methods (those starting with an underscore) are considered optional for documentation but are encouraged, especially for complex code.</li>
+</ul>
+</li>
+<li>
+<p><strong>2. Docstring Format</strong>:</p>
+<ul>
+<li>Docstrings should be enclosed in triple double quotes (""").</li>
+<li>The first line should be a short, concise summary of the object’s purpose.</li>
+</ul>
+</li>
+<li>
+<p><strong>3. Multi-line Docstrings</strong>:</p>
+<ul>
+<li>For longer descriptions, the summary line should be followed by a blank line, then a more elaborate description. The detailed description may include usage, arguments, return values, and raised exceptions if applicable.</li>
+<li>Multi-line docstrings should end with the closing triple quotes on a line by themselves.</li>
+</ul>
+</li>
+</ul>
+</details>
+<p>Here are two python templates for docstring of function and class that may give you a more concrete idea of how to write a docstring.</p>
+<details open="">
+<summary><strong>Template for function</strong></summary>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">function_name</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""A brief description of what the function does.
+
+    A more detailed description of the function if necessary.
+
+    Inputs:
+        param1 (Type): Description of param1.
+        param2 (Type): Description of param2.
+
+    Returns:
+        ReturnType: Description of the return value.
+
+    Raises: (Optional)
+        ExceptionType: Explanation of when and why the exception is raised.
+
+    Notes: (Optional)
+        Additional notes or examples of usage, if necessary.
+
+    Examples: (Optional)
+        &gt;&gt;&gt; function_name(value1, value2)
+        Expected return value
+    """</span>
+    <span class="token comment"># Function implementation</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></details>
+<details open="">
+<summary><strong>Template for class</strong></summary>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-class">class</span> <span class="token class-name">ClassName</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""Brief description of the class's purpose and behavior.
+
+  A more detailed description if necessary.
+
+  Args:
+      arg1 (Type): Description of arg1.
+      arg2 (Type): Description of arg2.
+      ...
+
+  Attributes: (Optional)
+      attribute1 (Type): Description of attribute1.
+      attribute2 (Type): Description of attribute2.
+      ...
+
+  Methods: (Optional)
+      method1: Brief description of method1.
+      method2: Brief description of method2.
+      ...
+
+  Examples: (Optional)
+      &gt;&gt;&gt; instance = ClassName(arg1, arg2)
+      &gt;&gt;&gt; instance.method1()
+
+  Notes:
+      Additional information about the class, if necessary.
+  """</span>
+  <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Constructor implementation</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></details>
+<p>Here are some more detailed examples of docstrings that you can check out:</p>
+<details open="">
+<summary><strong>Detailed examples for docstring</strong></summary>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> typing <span class="token keyword keyword-import">import</span> Union
+
+<span class="token keyword keyword-import">import</span> torch
+<span class="token keyword keyword-import">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword keyword-as">as</span> nn
+<span class="token keyword keyword-from">from</span> torchvision<span class="token punctuation">.</span>ops<span class="token punctuation">.</span>boxes <span class="token keyword keyword-import">import</span> box_area
+
+<span class="token comment"># simple functions</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">box_iou</span><span class="token punctuation">(</span>boxes1<span class="token punctuation">,</span> boxes2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Compute the intersection over union (IoU) between two sets of bounding boxes.
+
+    Inputs:
+        boxes1 (Tensor): Bounding boxes in format (x1, y1, x2, y2). Shape (N, 4).
+        boxes2 (Tensor): Bounding boxes in format (x1, y1, x2, y2). Shape (M, 4).
+
+    Returns:
+        Union[Tensor, Tensor]: A tuple containing two tensors:
+            iou (Tensor): The IoU between the two sets of bounding boxes. Shape (N, M).
+            union (Tensor): The area of the union between the two sets of bounding boxes.
+                Shape (N, M).
+    """</span>
+    area1 <span class="token operator">=</span> box_area<span class="token punctuation">(</span>boxes1<span class="token punctuation">)</span>
+    area2 <span class="token operator">=</span> box_area<span class="token punctuation">(</span>boxes2<span class="token punctuation">)</span>
+
+    <span class="token comment"># import ipdb; ipdb.set_trace()</span>
+    lt <span class="token operator">=</span> torch<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>boxes1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> boxes2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># [N,M,2]</span>
+    rb <span class="token operator">=</span> torch<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span>boxes1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span> boxes2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># [N,M,2]</span>
+
+    wh <span class="token operator">=</span> <span class="token punctuation">(</span>rb <span class="token operator">-</span> lt<span class="token punctuation">)</span><span class="token punctuation">.</span>clamp<span class="token punctuation">(</span><span class="token builtin">min</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment"># [N,M,2]</span>
+    inter <span class="token operator">=</span> wh<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> wh<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># [N,M]</span>
+
+    union <span class="token operator">=</span> area1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">]</span> <span class="token operator">+</span> area2 <span class="token operator">-</span> inter
+
+    iou <span class="token operator">=</span> inter <span class="token operator">/</span> <span class="token punctuation">(</span>union <span class="token operator">+</span> <span class="token number">1e-6</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> iou<span class="token punctuation">,</span> union
+
+<span class="token comment"># simple function with dict as input</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">create_conv_layer</span><span class="token punctuation">(</span>layer_config<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Create a convolutional layer for a neural network based on the provided configuration.
+
+    Inputs:
+        layer_config (dict): A dictionary with the following keys:
+            'in_channels' (int): The number of channels in the input.
+            'out_channels' (int): The number of channels produced by the convolution.
+            'kernel_size' (int or tuple): Size of the convolving kernel.
+            'stride' (int or tuple, optional): Stride of the convolution. Default: 1
+            'padding' (int or tuple, optional): Zero-padding added to both sides of the input.
+                Default: 0
+
+    Returns:
+        nn.Module: A PyTorch convolutional layer configured according to layer_config.
+
+    Example:
+        &gt;&gt;&gt; config = {'in_channels': 1, 'out_channels': 16, 'kernel_size': 3, 'stride': 1, 'padding': 0}
+        &gt;&gt;&gt; conv_layer = create_conv_layer(config)
+        &gt;&gt;&gt; isinstance(conv_layer, nn.Module)
+        True
+    """</span>
+    <span class="token keyword keyword-return">return</span> nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token operator">**</span>layer_config<span class="token punctuation">)</span>
+
+<span class="token comment"># simple class</span>
+<span class="token keyword keyword-class">class</span> <span class="token class-name">SimpleConvNet</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""A simple convolutional neural network wrapper class extending PyTorch's nn.Module.
+    This class creates a neural network with a single convolutional layer.
+
+    Args:
+        in_channels (int): The number of channels in the input.
+        out_channels (int): The number of channels produced by the convolution.
+        kernel_size (int or tuple): Size of the convolving kernel.
+
+    Attributes:
+        conv_layer (nn.Module): A convolutional layer as defined in the __init__ method.
+
+    Methods:
+        forward(x): Defines the forward pass of the network.
+
+    Example:
+        &gt;&gt;&gt; net = SimpleConvNet(1, 16, 3)
+        &gt;&gt;&gt; isinstance(net, nn.Module)
+        True
+    """</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span> kernel_size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>SimpleConvNet<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>conv_layer <span class="token operator">=</span> nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span>in_channels<span class="token punctuation">,</span> out_channels<span class="token punctuation">,</span> kernel_size<span class="token punctuation">)</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Defines the forward pass of the neural network.
+
+        Inputs:
+            x (Tensor): The input tensor to the network.
+
+        Returns:
+            Tensor: The output tensor after passing through the convolutional layer.
+        """</span>
+        <span class="token keyword keyword-return">return</span> self<span class="token punctuation">.</span>conv_layer<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+</code></pre></details>
+<h3 id="type-hinting">Type Hinting </h3>
+<p>Type hinting is like attaching labels to your produce in the grocery store; you know exactly what you're getting. It enhance readability, facilitate debugging, and enable better tooling. Type hinting in Python is a formal solution to statically indicate the type of a variable. It was introduced in Python 3.5 and is supported by most IDEs and code editors. Let's look at an example:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">add_numbers</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> a <span class="token operator">+</span> b
+</code></pre><p>Anyone reading this function signature can quickly understand that the function expects two integers as inputs and will return an integer, and that's the beauty of type hinting. It makes code more readable and self-documenting. <strong>It’s crucial to understand that type hints in Python do not change the dynamic nature of the language. They are simply hints and do not prevent runtime type errors.</strong></p>
+<p>Almost all built-in types are supported for type hinting. Let's start with some python in-built types.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token builtin">int</span><span class="token punctuation">:</span> Integer number<span class="token punctuation">.</span>
+param<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">5</span>
+
+<span class="token builtin">float</span><span class="token punctuation">:</span> Floating point number<span class="token punctuation">.</span>
+param<span class="token punctuation">:</span> <span class="token builtin">float</span> <span class="token operator">=</span> <span class="token number">3.14</span>
+
+<span class="token builtin">bool</span><span class="token punctuation">:</span> Boolean value <span class="token punctuation">(</span><span class="token boolean">True</span> <span class="token keyword keyword-or">or</span> <span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+param<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+
+<span class="token builtin">str</span><span class="token punctuation">:</span> String<span class="token punctuation">.</span>
+param<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">"researcher"</span>
+</code></pre><p>We can also use type hinting for more complex types by importing them from the <code>typing</code> module.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token comment"># Generic Types: List, Tuple, Dict, Set</span>
+<span class="token keyword keyword-from">from</span> typing <span class="token keyword keyword-import">import</span> List<span class="token punctuation">,</span> Tuple<span class="token punctuation">,</span> Dict<span class="token punctuation">,</span> Set
+
+param<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+param<span class="token punctuation">:</span> Dict<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Time"</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token string">"Money"</span><span class="token punctuation">:</span> <span class="token number">13</span><span class="token punctuation">}</span>
+param<span class="token punctuation">:</span> Set<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
+param<span class="token punctuation">:</span> Tuple<span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">2.0</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Specialized Types: Any, Union, Optional</span>
+<span class="token comment"># - Optional: For optional values.</span>
+<span class="token comment"># - Union: To indicate that a value can be of multiple types.</span>
+<span class="token comment"># - Any: For values of any type.</span>
+<span class="token keyword keyword-from">from</span> typing <span class="token keyword keyword-import">import</span> Union<span class="token punctuation">,</span> Optional<span class="token punctuation">,</span> Any
+
+param<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
+param<span class="token punctuation">:</span> Union<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">5</span>
+param<span class="token punctuation">:</span> Any <span class="token operator">=</span> <span class="token string">"Hello"</span>
+
+<span class="token comment"># Callable Types: For functions and methods.</span>
+<span class="token keyword keyword-from">from</span> typing <span class="token keyword keyword-import">import</span> Callable
+
+param<span class="token punctuation">:</span> Callable<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword keyword-lambda">lambda</span> x<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+</code></pre><p>These are the most common types you'll encounter in Python. For a complete list of supported types, check out the <a href="https://docs.python.org/3/library/typing.html">official documentation</a>.</p>
+<p>Now let's look at some examples of combining type hinting and docstring in action.</p>
+<details open="">
+<summary><strong>Type hinting Example</strong></summary>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> torch
+<span class="token keyword keyword-import">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword keyword-as">as</span> nn
+<span class="token keyword keyword-import">import</span> torch<span class="token punctuation">.</span>optim <span class="token keyword keyword-as">as</span> optim
+<span class="token keyword keyword-from">from</span> typing <span class="token keyword keyword-import">import</span> Tuple<span class="token punctuation">,</span> List<span class="token punctuation">,</span> Optional
+
+<span class="token keyword keyword-def">def</span> <span class="token function">find_max</span><span class="token punctuation">(</span>numbers<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Optional<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Find the maximum number in a list. Returns None if the list is empty.
+
+    Inputs:
+        numbers (List[int]): A list of integers.
+
+    Returns:
+        Optional[int]: The maximum number in the list, or None if the list is empty.
+    """</span>
+    <span class="token keyword keyword-return">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token keyword keyword-if">if</span> numbers <span class="token keyword keyword-else">else</span> <span class="token boolean">None</span>
+
+<span class="token keyword keyword-class">class</span> <span class="token class-name">SimpleNet</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""A simple neural network with one fully connected layer.
+
+    Args:
+        input_size (int): The size of the input features.
+        output_size (int): The size of the output features.
+    """</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> input_size<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> output_size<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>SimpleNet<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>fc <span class="token operator">=</span> nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span>input_size<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Perform a forward pass of the network.
+
+        Inputs:
+            x (torch.Tensor): The input tensor.
+
+        Returns:
+            torch.Tensor: The output tensor after passing through the network.
+        """</span>
+        <span class="token keyword keyword-return">return</span> self<span class="token punctuation">.</span>fc<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+<span class="token keyword keyword-def">def</span> <span class="token function">train_network</span><span class="token punctuation">(</span>network<span class="token punctuation">:</span> nn<span class="token punctuation">.</span>Module<span class="token punctuation">,</span> data<span class="token punctuation">:</span> List<span class="token punctuation">[</span>Tuple<span class="token punctuation">[</span>torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">,</span> torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+                  epochs<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> learning_rate<span class="token punctuation">:</span> <span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Train a neural network.
+
+    Inputs:
+        network (nn.Module): The neural network to train.
+        data (List[Tuple[torch.Tensor, torch.Tensor]]): Training data, a list of tuples with
+          input and target tensors.
+        epochs (int): The number of epochs to train for.
+        learning_rate (float): The learning rate for the optimizer.
+
+    Returns:
+        None
+    """</span>
+    criterion <span class="token operator">=</span> nn<span class="token punctuation">.</span>MSELoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    optimizer <span class="token operator">=</span> optim<span class="token punctuation">.</span>Adam<span class="token punctuation">(</span>network<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lr<span class="token operator">=</span>learning_rate<span class="token punctuation">)</span>
+
+    <span class="token keyword keyword-for">for</span> epoch <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-for">for</span> inputs<span class="token punctuation">,</span> targets <span class="token keyword keyword-in">in</span> data<span class="token punctuation">:</span>
+            optimizer<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            outputs <span class="token operator">=</span> network<span class="token punctuation">(</span>inputs<span class="token punctuation">)</span>
+            loss <span class="token operator">=</span> criterion<span class="token punctuation">(</span>outputs<span class="token punctuation">,</span> targets<span class="token punctuation">)</span>
+            loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></details>
+<p>Type hints in Python enhance code clarity, readability, and maintainability. Though Python remains dynamically typed, type hints offer the benefits of static typing, making them particularly useful in large codebases and complex applications like deep learning. Incorporating type hints is a straightforward way to make Python code more robust and easier to understand.</p>
+<h3 id="naming-conventions">Naming Conventions </h3>
+<p>In programming, naming conventions are as crucial as the code itself. They are the first layer of documentation for anyone who reads your code. Good naming conventions in Python enhance readability, maintainability, and are essential for understanding the intent of the code. Let's look at some of the best practices for naming things in Python.</p>
+<ul>
+<li><strong>General Python Naming Guidelines</strong>:
+<ul>
+<li>Descriptive Names: Choose names that reflect the purpose of the variable, function, or class.</li>
+<li>Short but Meaningful: While names should be descriptive, they should also be concise.</li>
+<li>Avoid Ambiguity: Names should be clear enough to not be confused with language keywords or commonly used variables.</li>
+</ul>
+</li>
+<li><strong>Conventions in Python</strong>:
+<ul>
+<li>Variable Names: Use lowercase letters and underscores to separate words.
+<ul>
+<li>Example: <code>num_epochs</code>, <code>learning_rate</code>, <code>train_data</code>, <code>learning_rate</code></li>
+</ul>
+</li>
+<li>Function Names: Also use lowercase letters and underscores to separate words.
+<ul>
+<li>Example: <code>train_network</code>, <code>find_max</code>, <code>get_data</code>, <code>calculate_loss</code>, <code>update_weights</code></li>
+</ul>
+</li>
+<li>Classes: Use CamelCase (capitalize the first letter of each word) for class names.
+<ul>
+<li>Example: <code>SimpleNet</code>, <code>ConvNet</code>, <code>ResidualBlock</code>, <code>DataLoader</code>, <code>Optimizer</code></li>
+</ul>
+</li>
+<li>Constants: Use all uppercase letters and underscores to separate words.
+<ul>
+<li>Example: <code>NUM_EPOCHS</code>, <code>LEARNING_RATE</code>, <code>TRAIN_DATA</code>, <code>VALIDATION_DATA</code></li>
+</ul>
+</li>
+<li>Private Variables: Use a leading underscore to indicate that a variable is private.
+<ul>
+<li>Example: <code>_weights</code>, <code>_optimizer</code>, <code>_loss</code>, <code>_init_params</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Abbreviations</strong>:
+<ul>
+<li>Variables and Functions: Lowercase with underscores. Examples: <code>img</code> for image, `calc_rmse`` for calculating root mean square error.</li>
+<li>Classes: CamelCase for well-known abbreviations. Examples: <code>RNN</code> for Recurrent Neural Network, <code>GAN</code>for Generative Adversarial Network.</li>
+<li>Constants: All uppercase for constants. Examples: <code>MAX_ITER</code> for maximum iterations, <code>DEFAULT_LR</code> for default learning rate.</li>
+<li>Clarity: Use abbreviations that are clear and well-understood in the context; explain any that might be ambiguous.</li>
+</ul>
+</li>
+</ul>
+<h3 id="formatting">Formatting </h3>
+<p>Code formatting is about more than just aesthetics; it's a crucial aspect of writing readable and maintainable code. In Python, adhering to a consistent formatting style helps developers understand and navigate the code more effectively. Before we dive into the details of code formatting, let's look at two code snippets and see which style you prefer.</p>
+<div> <center> <img src="images/formatting.jpg" width="600"> </center></div>
+<p>The Python Enhancement Proposal 8 <strong>(PEP8)</strong> is the de facto code style guide for Python. It covers various aspects of code formatting like indentation, line length, whitespace usage, and more. The rules are complex and detailed, but here are two off-the-shelf tools that can help you format your code according to PEP8, <strong>automatically</strong>.</p>
+<ul>
+<li><strong><a href="https://marketplace.visualstudio.com/items?itemName=eeyore.yapf">yapf</a></strong>: It's an open-source tool designed to automatically format Python code to conform to the PEP 8 style guide. It reformats your code in a way that it believes is the best formatting approach, not merely to adhere strictly to PEP 8. It is now available as a VS Code extension. Once installed and correctly configured, you can format your code automatically when saving the code.</li>
+</ul>
+<div> <center> <img src="images/yapf.jpg" width="300"> </center></div>
+<ul>
+<li><strong><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.isort">isort</a></strong>: isort is a Python utility/library to sort imports alphabetically and automatically separate them into sections and by type.</li>
+</ul>
+<div> <center> <img src="images/isort.jpg" width="300"> </center></div>
+<p>Once you have installed the two extensions, yapf and isort, you can automatically format your Python code and organize your import statements with minimal effort.</p>
+<h2 id="2-simplicity-and-efficiency">2. Simplicity and Efficiency </h2>
+<h3 id="kiss-principle">KISS Principle </h3>
+<p>Keep It Simple, Stupid (KISS) is a design principle that emphasizes the importance of simplicity in software development. The core idea is that systems work best if they are kept simple rather than made complex. Simplicity here means avoiding unnecessary complexity, which can lead to code that is more reliable, easier to understand, maintain, and extend. Here are some of the key aspects of the KISS principle that you can apply to your code:</p>
+<ul>
+<li><strong>Simple Function Definitions</strong>:
+<ul>
+<li>Write functions that <em><strong>do one thing and do it well</strong></em>. Each function should have a clear purpose and not be overloaded with multiple tasks. Here's an example of a function that violates the KISS principle:<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> Non<span class="token operator">-</span>KISS <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">forward</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> target<span class="token punctuation">,</span> optimizer<span class="token punctuation">,</span> criterion<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    output <span class="token operator">=</span> model<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
+    loss <span class="token operator">=</span> criterion<span class="token punctuation">(</span>output<span class="token punctuation">,</span> target<span class="token punctuation">)</span>
+    optimizer<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> loss<span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> KISS <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">forward</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    output <span class="token operator">=</span> model<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> output
+
+<span class="token keyword keyword-def">def</span> <span class="token function">train_step</span><span class="token punctuation">(</span>loader<span class="token punctuation">,</span> model<span class="token punctuation">,</span> optimizer<span class="token punctuation">,</span> criterion<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-for">for</span> <span class="token builtin">input</span><span class="token punctuation">,</span> target <span class="token keyword keyword-in">in</span> loader<span class="token punctuation">:</span>
+    output <span class="token operator">=</span> model<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
+    loss <span class="token operator">=</span> criterion<span class="token punctuation">(</span>output<span class="token punctuation">,</span> target<span class="token punctuation">)</span>
+    optimizer<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></li>
+</ul>
+</li>
+<li><strong>Use Build-in Libraies and Functions</strong>:
+<ul>
+<li>Python, known for its comprehensive standard library, along with numerous third-party libraries, offers a wealth of pre-written modules and functions that can save time, reduce the likelihood of bugs, and improve efficiency. Here is an example of using a built-in function to calculate the Non Maximum Suppression (NMS) of bounding boxes:<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> Non<span class="token operator">-</span>KISS <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-import">import</span> torch
+<span class="token keyword keyword-def">def</span> <span class="token function">nms</span><span class="token punctuation">(</span>boxes<span class="token punctuation">,</span> scores<span class="token punctuation">,</span> threshold<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Apply non-maximum suppression to avoid detecting too many
+    overlapping bounding boxes for the same object.
+
+    Parameters:
+    boxes (Tensor): The locations of the bounding boxes.
+    scores (Tensor): The scores for each box.
+    threshold (float): The overlap threshold for suppressing boxes.
+
+    Returns:
+    List[int]: The indices of the boxes that were kept.
+    """</span>
+    x1 <span class="token operator">=</span> boxes<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+    y1 <span class="token operator">=</span> boxes<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    x2 <span class="token operator">=</span> boxes<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+    y2 <span class="token operator">=</span> boxes<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+
+    areas <span class="token operator">=</span> <span class="token punctuation">(</span>x2 <span class="token operator">-</span> x1<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>y2 <span class="token operator">-</span> y1<span class="token punctuation">)</span>
+    _<span class="token punctuation">,</span> order <span class="token operator">=</span> scores<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> descending<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    keep <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword keyword-while">while</span> order<span class="token punctuation">.</span>numel<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        i <span class="token operator">=</span> order<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        keep<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+        <span class="token keyword keyword-if">if</span> order<span class="token punctuation">.</span>numel<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-break">break</span>
+
+        xx1 <span class="token operator">=</span> torch<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span>x1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> x1<span class="token punctuation">[</span>order<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        yy1 <span class="token operator">=</span> torch<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span>y1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> y1<span class="token punctuation">[</span>order<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        xx2 <span class="token operator">=</span> torch<span class="token punctuation">.</span>minimum<span class="token punctuation">(</span>x2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> x2<span class="token punctuation">[</span>order<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        yy2 <span class="token operator">=</span> torch<span class="token punctuation">.</span>minimum<span class="token punctuation">(</span>y2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> y2<span class="token punctuation">[</span>order<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        w <span class="token operator">=</span> torch<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> xx2 <span class="token operator">-</span> xx1<span class="token punctuation">)</span>
+        h <span class="token operator">=</span> torch<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> yy2 <span class="token operator">-</span> yy1<span class="token punctuation">)</span>
+        overlap <span class="token operator">=</span> <span class="token punctuation">(</span>w <span class="token operator">*</span> h<span class="token punctuation">)</span> <span class="token operator">/</span> areas<span class="token punctuation">[</span>order<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+        ids <span class="token operator">=</span> <span class="token punctuation">(</span>overlap <span class="token operator">&lt;=</span> threshold<span class="token punctuation">)</span><span class="token punctuation">.</span>nonzero<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-if">if</span> ids<span class="token punctuation">.</span>numel<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-break">break</span>
+        order <span class="token operator">=</span> order<span class="token punctuation">[</span>ids <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword keyword-return">return</span> keep
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> KISS <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-import">import</span> torch
+<span class="token keyword keyword-import">import</span> torchvision<span class="token punctuation">.</span>ops <span class="token keyword keyword-as">as</span> ops
+<span class="token comment"># Apply NMS from torchvision</span>
+nms_indices <span class="token operator">=</span> ops<span class="token punctuation">.</span>nms<span class="token punctuation">(</span>boxes<span class="token punctuation">,</span> scores<span class="token punctuation">,</span> threshold<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+</code></pre></li>
+</ul>
+</li>
+<li><strong>Avoid Over-Engineering</strong>:
+<ul>
+<li>Over-engineering refers to the practice of making a project or a system more complicated than necessary, often adding extra features or complexity that do not add significant value. This can manifest as overly complex code, over-abstracted architectures, or unnecessary features that complicate maintenance and understanding without providing proportional benefits. Here is an example of over-engineering, say<br>
+we need a function to calculate then mean value of a list:<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> Non<span class="token operator">-</span>KISS <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-class">class</span> <span class="token class-name">Number</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>value <span class="token operator">=</span> value
+
+<span class="token keyword keyword-class">class</span> <span class="token class-name">NumberList</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>numbers <span class="token operator">=</span> <span class="token punctuation">[</span>Number<span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token keyword keyword-for">for</span> num <span class="token keyword keyword-in">in</span> numbers<span class="token punctuation">]</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">sum</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> <span class="token builtin">sum</span><span class="token punctuation">(</span>number<span class="token punctuation">.</span>value <span class="token keyword keyword-for">for</span> number <span class="token keyword keyword-in">in</span> self<span class="token punctuation">.</span>numbers<span class="token punctuation">)</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">length</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>numbers<span class="token punctuation">)</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">average</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> self<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> self<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-if">if</span> self<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token keyword keyword-else">else</span> <span class="token number">0</span>
+
+<span class="token comment"># Usage</span>
+number_list <span class="token operator">=</span> NumberList<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+avg <span class="token operator">=</span> number_list<span class="token punctuation">.</span>average<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Average:"</span><span class="token punctuation">,</span> avg<span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> KISS <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">average</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> <span class="token builtin">sum</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token builtin">len</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token keyword keyword-if">if</span> numbers <span class="token keyword keyword-else">else</span> <span class="token number">0</span>
+
+<span class="token comment"># Usage</span>
+avg <span class="token operator">=</span> average<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Average:"</span><span class="token punctuation">,</span> avg<span class="token punctuation">)</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="write-efficient-code">Write Efficient Code </h3>
+<p>Writing efficient code means optimizing both for speed and resource usage, ensuring that the application runs smoothly and responds quickly, even as the complexity of tasks or the size of data increases.</p>
+<ul>
+<li><strong>Algorithmic Complexity:</strong>
+<ul>
+<li>The efficiency of code often comes down to its algorithmic complexity, commonly referred to as Big O notation. It's crucial to choose the right algorithm and data structure for a given task. For example, in a sorting task, using QuickSort (average complexity <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(nlogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>) is generally more efficient than Bubble Sort (average complexity <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>).</li>
+</ul>
+</li>
+<li><strong>Efficient Data Handling</strong>:
+<ul>
+<li>Efficient data handling is crucial, especially in data-heavy situations. For example, when working with large datasets, it's better to use generators instead of lists to avoid loading the entire dataset into memory. Similarly, when working with images, it's better to use a data loader that loads images on-demand rather than loading all images into memory at once. Here is an example of using <code>yield</code> to create a generator to load TSV (Tab-Separated Values) file:<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> Non<span class="token operator">-</span>Efficient <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">load_data_into_list</span><span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword keyword-with">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_path<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword keyword-as">as</span> <span class="token builtin">file</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-for">for</span> line <span class="token keyword keyword-in">in</span> <span class="token builtin">file</span><span class="token punctuation">:</span>
+            columns <span class="token operator">=</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\t'</span><span class="token punctuation">)</span>
+            data<span class="token punctuation">.</span>append<span class="token punctuation">(</span>columns<span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> data
+<span class="token comment"># this will load all data into memory, which is not efficient</span>
+data <span class="token operator">=</span> load_data_into_list<span class="token punctuation">(</span><span class="token string">'data.tsv'</span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> Efficient <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">load_data_generator</span><span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword keyword-with">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_path<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword keyword-as">as</span> <span class="token builtin">file</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-for">for</span> line <span class="token keyword keyword-in">in</span> <span class="token builtin">file</span><span class="token punctuation">:</span>
+        columns <span class="token operator">=</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\t'</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-yield">yield</span> columns
+<span class="token comment"># this will create a generator that loads data on-demand</span>
+data_generator <span class="token operator">=</span> load_data_generator<span class="token punctuation">(</span><span class="token string">'data.tsv'</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-for">for</span> data <span class="token keyword keyword-in">in</span> data_generator<span class="token punctuation">:</span>
+    <span class="token comment"># Process each line of data here</span>
+</code></pre></li>
+</ul>
+</li>
+<li><strong>Vectorization and Parallelization</strong>:
+<ul>
+<li>Vectorization and parallelization are two techniques that can significantly improve the performance of code. Vectorization refers to performing operations on entire arrays rather than individual elements. For example, in NumPy, we can add two arrays of the same shape using the <code>+</code> operator, which will add the corresponding elements of the two arrays. This is much more efficient than using a <code>for</code> loop to add the elements one by one. Similarly, parallelization refers to performing operations in parallel, using multiple processors or CPU cores. Here is an example of vectorization and parallelization in action:<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> Non<span class="token operator">-</span>Efficient <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-import">import</span> numpy <span class="token keyword keyword-as">as</span> np
+<span class="token keyword keyword-def">def</span> <span class="token function">add_arrays</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword keyword-for">for</span> i <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> result
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span>
+<span class="token comment"># this will take a long time to execute</span>
+c <span class="token operator">=</span> add_arrays<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> Efficient <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-import">import</span> numpy <span class="token keyword keyword-as">as</span> np
+<span class="token keyword keyword-def">def</span> <span class="token function">add_arrays</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> a <span class="token operator">+</span> b
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span>
+<span class="token comment"># this will execute much faster</span>
+c <span class="token operator">=</span> add_arrays<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-maintainability">3. Maintainability </h2>
+<p>Maintainability refers to how easily software can be maintained over time. This includes fixing bugs, improving functionality, and update to meet new requirements or work with new technologies. High maintainability is crucial for the long-term success and adaptability of a deep learning project.</p>
+<h3 id="use-registry-mechanism-to-manage-your-code">Use Registry Mechanism to Manage Your Code </h3>
+<p>Quoting from <a href="https://mmengine.readthedocs.io/en/latest/advanced_tutorials/registry.html#registry">MMEngine</a>, "The registry can be considered as a union of a mapping table and a build function of modules. The mapping table maintains a <em><strong>mapping from strings to classes or functions</strong></em>, allowing the user to find the corresponding class or function with its name/notation. For example, the mapping from the string "ResNet" to the ResNet class. The module build function defines how to find the corresponding class or function based on a string and how to instantiate the class or call the function. "</p>
+<p>Now let's look at an example of how registry mechanism works</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token decorator annotation punctuation">@BACKBONES<span class="token punctuation">.</span>register_module</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-class">class</span> <span class="token class-name">ClipViTWrapper</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> return_pool_feature<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">,</span> freeze<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>ClipViTWrapper<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>model <span class="token operator">=</span> CLIPVisionModel<span class="token punctuation">.</span>from_pretrained<span class="token punctuation">(</span>
+            <span class="token string">'openai/clip-vit-base-patch32'</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>return_pool_feature <span class="token operator">=</span> return_pool_feature
+        <span class="token keyword keyword-if">if</span> freeze<span class="token punctuation">:</span>
+            <span class="token keyword keyword-for">for</span> param <span class="token keyword keyword-in">in</span> self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                param<span class="token punctuation">.</span>requires_grad <span class="token operator">=</span> <span class="token boolean">False</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> W<span class="token operator">/</span>O Registry <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+<span class="token keyword keyword-from">from</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>backbones <span class="token keyword keyword-import">import</span> ClipViTWrapper
+model <span class="token operator">=</span> ClipViTWrapper<span class="token punctuation">(</span>return_pool_feature<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> freeze<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> W<span class="token operator">/</span> Registry <span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span><span class="token operator">&lt;&lt;</span>
+model <span class="token operator">=</span> BACKBONES<span class="token punctuation">.</span>build<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token operator">=</span><span class="token string">'ClipViTWrapper'</span><span class="token punctuation">,</span> return_pool_feature<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> freeze<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li>
+<p><strong>Decoupling Code and Configuration</strong>: The registry pattern allows for the creation and configuration of objects like <code>ClipViTWrapper</code> in a more dynamic and decoupled manner. Instead of directly importing and instantiating the class, you use a registry (<code>BACKBONES</code>) to build the object. This separation of object creation from usage enhances flexibility and maintainability.</p>
+</li>
+<li>
+<p><strong>Enhanced Flexibility</strong>: With the registry, you can easily switch between different backbone models (like <code>ClipViTWrapper</code>) by changing a configuration file or a dictionary.</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: As the project grows, the registry pattern scales well, accommodating more components without increasing</p>
+</li>
+</ul>
+<h3 id="organize-your-code-by-functionality">Organize Your Code by Functionality </h3>
+<p>Organizing code by functionality is a crucial aspect of maintainability. It involves grouping related code into modules, packages, and libraries, and separating unrelated code into distinct sections. This makes it easier to find and update code, and also helps avoid conflicts between different parts of the codebase. Generally, an AI project is composed of three parts: model, dataset, and computation depicited in the following figure.</p>
+<h1 align="center">
+    <br>
+    <img src="../assets/ai_basis.jpg" height="400">
+</h1>
+<ul>
+<li><code>Model</code>: The model part is the core of an AI project, which is composed of the model architecture, loss function, other components. For model architecture, it can be divided into backbone, encoder, decoder, head and other components depending on the specific task.</li>
+<li><code>Dataset</code>: The dataset part is the data source of an AI project, which is composed of data loader, data augmentation, data preprocessing, and other components.</li>
+<li><code>Computation</code>: The computation part is where you train and test your model, which is composed of training, evaluation, and other components.</li>
+</ul>
+<p>Based on the above three parts, we can organize our code by functionality as follows:</p>
+<h1 align="center">
+    <br>
+    <img src="../assets/code_structure.jpg" height="500">
+</h1>
+<ul>
+<li><code>configs</code>: The configs part is where you store all the configuration files, including the dataset configuration, model configuration, training configuration, and others.</li>
+<li><code>datasets</code>: The datasets part is where you store all the dataset-related code, including data loader, data augmentation, data preprocessing, and others.</li>
+<li><code>models</code>: The models part is where you store all the model-related code, including backbone, encoder, decoder, head, loss function, and others.</li>
+<li><code>engine</code>: The engine part is where you store all the computation-related code, including training, evaluation, and others.</li>
+<li><code>tools</code>: The tools part is where you store all the tools-related code, including visualization, logging, and others.</li>
+<li><code>tests</code>: The tests part is where you store all the test-related code, including unit test, integration test, and others.</li>
+<li><code>scripts</code>: The scripts part is where you store all the scripts-related code, which are used to launch the training, evaluation, and others, especially for slurm-based distributed training.</li>
+<li><code>README.md</code>: The <code>README.md</code> part is where you store the documentation of your project, including the installation, usage, and others.</li>
+<li><code>LICENSE</code>: The LICENSE part is where you store the license of your project, which is crucial for open-source projects.</li>
+<li><code>.gitignore</code>: The .gitignore part is where you store the files that you don't want to upload to the remote repository, which is crucial for open-source projects.</li>
+<li><code>requirements.txt</code>: The requirements.txt part is where you store the dependencies of your project, which is crucial for open-source projects.</li>
+<li><code>train.py</code>: The <code>train.py</code> part is a port to launch the training of your project.</li>
+<li><code>eval.py</code>: The <code>eval.py</code> part is a port to launch the evaluation of your project.</li>
+<li><code>inference.py</code>: The <code>inference.py</code> part is a port to launch the inference of your project.</li>
+</ul>
+<p>All the above parts can be easily mantained by <code>Registry Mechanism</code>. <a href="">Here</a> we provide a complete example of organizing your code by functionality through <code>Registry Mechanism</code>.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

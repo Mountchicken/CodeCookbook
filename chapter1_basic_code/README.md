@@ -1,5 +1,7 @@
-# Chapter 1: Basic Code
-In the world of coding, every keystroke is a decision, and like a well-tailored suit, good code never goes out of style. It's a blend of science and art, where elegance meets logic. But let’s face it, not all code is created equal. Some are like a Swiss Army knife - versatile and efficient, while others... well, they're more like a tangled ball of yarn. What separates the good from the bad? Here are three key aspects of good code:
+
+
+# Cookbook to Craft Good Code
+Think of good code like a classic, well-fitting piece of clothing—it never goes out of style. Coding is both a science and an art, where neatness and logic come together. What makes some code stand out as great? Here are three key aspects:
 - **Readability**:
   -  Good code should be easy to read and understand. This means using clear naming conventions, organizing code logically, and commenting where necessary to explain complex parts.
 - **Simplicity and Efficiency**:
@@ -7,11 +9,11 @@ In the world of coding, every keystroke is a decision, and like a well-tailored 
   -  Efficient code also performs its tasks quickly and resourcefully.
 - **Maintainability**:
   - Code should be easy to maintain and modify. This involves writing modular code, where different parts of the program are separated into distinct sections or functions that can be updated independently.
-
-In this chapter, we'll explore some of the best practices for writing good code. We'll cover everything from naming conventions to code review, and we'll also discuss some of the tools that can help you write better code. Let's get started!
+  
+In this guide, we'll dive into the essentials of crafting great code. We'll go through everything from how to name things clearly and highlight tools that make coding better and easier. 
 
 ### Contents
-- [Chapter 1: Basic Code](#chapter-1-basic-code)
+- [Cookbook to Craft Good Code](#cookbook-to-craft-good-code)
     - [Contents](#contents)
   - [1. Readability](#1-readability)
     - [Docstring](#docstring)
@@ -24,6 +26,7 @@ In this chapter, we'll explore some of the best practices for writing good code.
   - [3. Maintainability](#3-maintainability)
     - [Use Registry Mechanism to Manage Your Code](#use-registry-mechanism-to-manage-your-code)
     - [Organize Your Code by Functionality](#organize-your-code-by-functionality)
+
 
 ## 1. Readability
 Readability in code is akin to clear handwriting in a letter. It's not just about what you write, but how you present it. A well-written piece of code should speak to its reader, guiding them through its logic as effortlessly as a well-told story. Let's delve into some of the key practices that make code readable.
@@ -81,7 +84,7 @@ Here are two python templates for docstring of function and class that may give 
 
 </details>
 
-<details close>
+<details open>
 <summary><strong>Template for class</strong></summary>
 
   ```python
@@ -121,7 +124,7 @@ Here are two python templates for docstring of function and class that may give 
 
 Here are some more detailed examples of docstrings that you can check out:
 
-<details close>
+<details open>
 <summary><strong>Detailed examples for docstring</strong></summary>
 
 ```python
@@ -249,7 +252,7 @@ str: String.
 param: str = "researcher"
 ```
 
-We can also use type hinting for more complex types by importing them from the typing module.
+We can also use type hinting for more complex types by importing them from the `typing` module.
 ```python
 # Generic Types: List, Tuple, Dict, Set
 from typing import List, Tuple, Dict, Set
@@ -279,7 +282,7 @@ These are the most common types you'll encounter in Python. For a complete list 
 
 Now let's look at some examples of combining type hinting and docstring in action.
 
-<details close>
+<details open>
 <summary><strong>Type hinting Example</strong></summary>
 
 ```python
@@ -609,3 +612,35 @@ model = BACKBONES.build(dict(type='ClipViTWrapper', return_pool_feature=True, fr
 - **Scalability**: As the project grows, the registry pattern scales well, accommodating more components without increasing 
 
 ### Organize Your Code by Functionality
+Organizing code by functionality is a crucial aspect of maintainability. It involves grouping related code into modules, packages, and libraries, and separating unrelated code into distinct sections. This makes it easier to find and update code, and also helps avoid conflicts between different parts of the codebase. Generally, an AI project is composed of three parts: model, dataset, and computation depicited in the following figure.
+
+<h1 align="center">
+    <br>
+    <img src="../assets/ai_basis.jpg" height=400 >
+</h1>
+
+  - `Model`: The model part is the core of an AI project, which is composed of the model architecture, loss function, other components. For model architecture, it can be divided into backbone, encoder, decoder, head and other components depending on the specific task. 
+  - `Dataset`: The dataset part is the data source of an AI project, which is composed of data loader, data augmentation, data preprocessing, and other components.
+  - `Computation`: The computation part is where you train and test your model, which is composed of training, evaluation, and other components.
+
+Based on the above three parts, we can organize our code by functionality as follows:
+
+<h1 align="center">
+    <br>
+    <img src="../assets/code_structure.jpg" height=500 >
+</h1>
+
+- `configs`: The configs part is where you store all the configuration files, including the dataset configuration, model configuration, training configuration, and others.
+- `datasets`: The datasets part is where you store all the dataset-related code, including data loader, data augmentation, data preprocessing, and others.
+- `models`: The models part is where you store all the model-related code, including backbone, encoder, decoder, head, loss function, and others.
+- `engine`: The engine part is where you store all the computation-related code, including training, evaluation, and others.
+- `tools`: The tools part is where you store all the tools-related code, including visualization, logging, and others.
+- `tests`: The tests part is where you store all the test-related code, including unit test, integration test, and others.
+- `scripts`: The scripts part is where you store all the scripts-related code, which are used to launch the training, evaluation, and others, especially for slurm-based distributed training.
+- `README.md`: The `README.md` part is where you store the documentation of your project, including the installation, usage, and others.
+- `LICENSE`: The LICENSE part is where you store the license of your project, which is crucial for open-source projects.
+- `.gitignore`: The .gitignore part is where you store the files that you don't want to upload to the remote repository, which is crucial for open-source projects.
+- `requirements.txt`: The requirements.txt part is where you store the dependencies of your project, which is crucial for open-source projects.
+- `train.py`: The `train.py` part is a port to launch the training of your project.
+- `eval.py`: The `eval.py` part is a port to launch the evaluation of your project.
+- `inference.py`: The `inference.py` part is a port to launch the inference of your project.
